@@ -1,0 +1,49 @@
+/* Configuration générale de la page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+}
+
+h1 {
+    color: #2c3e50;
+}
+
+/* Style du tableau */
+table {
+    border-collapse: collapse;
+    width: 80%;
+    max-width: 800px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #4158D0;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+/* Effet au survol des lignes */
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Style spécifique pour tes meilleures notes */
+.grade-high {
+    font-weight: bold;
+    color: #27ae60; /* Vert 42 */
+}
