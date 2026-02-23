@@ -14,7 +14,8 @@ function handleCellClick(clickedCellEvent) {
     const clickedCell = clickedCellEvent.target;
     const clickedCellIndex = parseInt(clickedCell.getAttribute('data-index'));
 
-    if (gameState[clickedCellIndex] !== "" || !gameActive) return;
+    if (gameState[clickedCellIndex] !== "" || !gameActive)
+        return;
 
     gameState[clickedCellIndex] = currentPlayer;
     clickedCell.innerText = currentPlayer;
@@ -29,7 +30,8 @@ function checkResult() {
         let a = gameState[winCondition[0]];
         let b = gameState[winCondition[1]];
         let c = gameState[winCondition[2]];
-        if (a === '' || b === '' || c === '') continue;
+        if (a === '' || b === '' || c === '')
+            continue;
         if (a === b && b === c) {
             roundWon = true;
             break;
@@ -37,20 +39,20 @@ function checkResult() {
     }
 
     if (roundWon) {
-        statusDisplay.innerText = `Le joueur ${currentPlayer} a gagné !`;
+        statusDisplay.innerText = `Player ${currentPlayer} won !`;
         gameActive = false;
         return;
     }
 
     let roundDraw = !gameState.includes("");
     if (roundDraw) {
-        statusDisplay.innerText = "Match nul !";
+        statusDisplay.innerText = "It's a tie !";
         gameActive = false;
         return;
     }
 
     currentPlayer = currentPlayer === "X" ? "O" : "X";
-    statusDisplay.innerText = `C'est au tour de ${currentPlayer}`;
+    statusDisplay.innerText = `Player ${currentPlayer} turn`;
 }
 
 document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
@@ -58,6 +60,6 @@ document.querySelector('#reset').addEventListener('click', () => {
     gameActive = true;
     currentPlayer = "X";
     gameState = ["", "", "", "", "", "", "", "", ""];
-    statusDisplay.innerText = "C'est au tour de X";
+    statusDisplay.innerText = "X's turn";
     cells.forEach(cell => cell.innerText = "");
 });

@@ -7,6 +7,7 @@ body {
     color: white;
 }
 
+/* . indique qu'on cible une classe */
 .game-grid {
     display: grid;
     grid-template-columns: repeat(3, 100px);
@@ -20,20 +21,32 @@ body {
     height: 100px;
     background-color: #ecf0f1;
     border: none;
-    font-size: 2rem;
+    font-size: 4rem;
     font-weight: bold;
     cursor: pointer;
     border-radius: 8px;
 }
 
-.cell:hover { background-color: #bdc3c7; }
+.cell:hover { 
+    background-color: #bdc3c7;
+    width: 103px;
+    height: 103px;
+}
 
+/* # indique qu'on cible un ID */
 #reset {
-    padding: 10px 20px;
+    width: 100px;
+    height: 50px;
     font-size: 1rem;
     cursor: pointer;
     background-color: #e74c3c;
     color: white;
     border: none;
     border-radius: 5px;
+}
+
+#reset:hover {
+    width: 103px;
+    height: 53px;
+    background-color: #ba2717;
 }
